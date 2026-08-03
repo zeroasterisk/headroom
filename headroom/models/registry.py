@@ -243,6 +243,54 @@ def _register_builtin_models() -> None:
     # Google Models
     # ============================================================
 
+    _MODELS["gemini-3.5-flash"] = ModelInfo(
+        name="gemini-3.5-flash",
+        provider="google",
+        context_window=1000000,
+        max_output_tokens=8192,
+        supports_tools=True,
+        supports_vision=True,
+        supports_streaming=True,
+        tokenizer_backend="google",
+        notes="Gemini 3.5 Flash - Ultra-fast multimodal",
+    )
+
+    _MODELS["gemini-3.5-pro"] = ModelInfo(
+        name="gemini-3.5-pro",
+        provider="google",
+        context_window=2000000,
+        max_output_tokens=8192,
+        supports_tools=True,
+        supports_vision=True,
+        supports_streaming=True,
+        tokenizer_backend="google",
+        notes="Gemini 3.5 Pro - High-capability 2M context",
+    )
+
+    _MODELS["gemini-2.5-flash"] = ModelInfo(
+        name="gemini-2.5-flash",
+        provider="google",
+        context_window=1000000,
+        max_output_tokens=8192,
+        supports_tools=True,
+        supports_vision=True,
+        supports_streaming=True,
+        tokenizer_backend="google",
+        notes="Gemini 2.5 Flash - Fast multimodal",
+    )
+
+    _MODELS["gemini-2.5-pro"] = ModelInfo(
+        name="gemini-2.5-pro",
+        provider="google",
+        context_window=2000000,
+        max_output_tokens=8192,
+        supports_tools=True,
+        supports_vision=True,
+        supports_streaming=True,
+        tokenizer_backend="google",
+        notes="Gemini 2.5 Pro - High-capability 2M context",
+    )
+
     _MODELS["gemini-2.0-flash"] = ModelInfo(
         name="gemini-2.0-flash",
         provider="google",

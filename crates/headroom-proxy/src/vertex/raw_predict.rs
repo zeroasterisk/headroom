@@ -428,10 +428,22 @@ pub(crate) async fn forward_vertex_request(
 }
 
 fn error_response(status: StatusCode, msg: &'static str) -> Response {
-    Response::builder()
+    let body = serde_json::json!({
+        "error": {
+            "type": "vertex_error",
+            "message": msg,
+        }
+    })
+    .to_string();
+    let mut resp = Response::builder()
         .status(status)
-        .body(Body::from(msg))
-        .expect("static error response")
+        .body(Body::from(body))
+        .expect("static error response");
+    resp.headers_mut().insert(
+        http::header::CONTENT_TYPE,
+        http::HeaderValue::from_static("application/json"),
+    );
+    resp
 }
 
 /// Bound on the in-flight queue between the byte-passthrough and the

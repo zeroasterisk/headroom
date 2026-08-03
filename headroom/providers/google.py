@@ -49,6 +49,14 @@ _PRICING_LAST_UPDATED = date(2025, 1, 6)
 
 # Google model context limits
 _CONTEXT_LIMITS: dict[str, int] = {
+    # Gemini 3.5 (Gemini Enterprise)
+    "gemini-3.5-flash": 1000000,
+    "gemini-3.5-pro": 2000000,
+    "gemini-3.5-flash-lite": 1000000,
+    # Gemini 2.5 (Gemini Enterprise)
+    "gemini-2.5-flash": 1000000,
+    "gemini-2.5-pro": 2000000,
+    "gemini-2.5-flash-lite": 1000000,
     # Gemini 2.0
     "gemini-2.0-flash": 1000000,
     "gemini-2.0-flash-exp": 1000000,
@@ -68,6 +76,12 @@ _CONTEXT_LIMITS: dict[str, int] = {
 # Pricing per 1M tokens (input, output)
 # Note: Google has different pricing tiers based on context length
 _PRICING: dict[str, tuple[float, float]] = {
+    "gemini-3.5-flash": (0.075, 0.30),
+    "gemini-3.5-pro": (1.25, 5.00),
+    "gemini-3.5-flash-lite": (0.0375, 0.15),
+    "gemini-2.5-flash": (0.075, 0.30),
+    "gemini-2.5-pro": (1.25, 5.00),
+    "gemini-2.5-flash-lite": (0.0375, 0.15),
     "gemini-2.0-flash": (0.10, 0.40),
     "gemini-2.0-flash-exp": (0.10, 0.40),  # Experimental, may change
     "gemini-1.5-pro": (1.25, 5.00),  # Up to 128K context
